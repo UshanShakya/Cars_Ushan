@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+   >
+
+    <TextView
+        android:text="Type and Run"
+        style="@style/TV"
+        />
+    <TextView
+        android:text="Make:"
+        style="@style/TV"
+        />
+    <EditText
+        style="@style/Edittext"
+        android:id="@+id/etMake"/>
+    <TextView
+        style="@style/TV"
+        android:text="Year:"
+        />
+    <EditText
+        style="@style/Edittext"
+        android:id="@+id/etYear"
+        android:inputType="number"/>
+    <TextView
+        android:text="Color:"
+        style="@style/TV"
+        />
+    <EditText
+        style="@style/Edittext"
+        android:id="@+id/etColor"/>
+    <TextView
+        style="@style/TV"
+        android:text="Purchase price(#):"
+        android:inputType="numberDecimal"
+        />
+
+    <EditText
+        style="@style/Edittext"
+        android:id="@+id/etPrice"/>
+    <TextView
+        style="@style/TV"
+        android:text="Engine Size (litre):"
+        android:inputType="numberDecimal"
+        />
+    <EditText
+        style="@style/Edittext"
+        android:id="@+id/etEngine"/>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <Button
+        android:id="@+id/btnCar"
+        android:text="Create Car"
+        style="@style/Button"
+        />
+
+    <Button
+        android:id="@+id/btnDiesel"
+        android:text="Create Diesel"
+        style="@style/Button"
+        />
+</LinearLayout>
+
+       <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+           <ScrollView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/etAnswer"
+                    style="@style/Edittext"
+                    android:inputType="textMultiLine"
+                    android:editable="false"
+                    />
+
+           </ScrollView>
+    </LinearLayout>
+</LinearLayout>
+</ScrollView>
