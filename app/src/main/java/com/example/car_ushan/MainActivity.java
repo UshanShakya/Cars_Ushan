@@ -61,22 +61,27 @@ public class MainActivity extends AppCompatActivity {
                 make= etMake.getText().toString();
                 if(TextUtils.isEmpty(make)){
                     etMake.setError("Please Enter a Manufacturer.");
+                    return;
                 }
                 year= etYear.getText().toString();
                 if(TextUtils.isEmpty(year)){
                     etMake.setError("Please Enter a Year.");
+                    return;
                 }
                 color= etColor.getText().toString();
                 if(TextUtils.isEmpty(color)){
                     etMake.setError("Please Enter a Color.");
+                    return;
                 }
                 price= etPrice.getText().toString();
                 if(TextUtils.isEmpty(price)){
                     etMake.setError("Please Enter a Price.");
+                    return;
                 }
                 engine= etEngine.getText().toString();
                 if(TextUtils.isEmpty(engine)){
                     etMake.setError("Please Enter a Engine Litre.");
+                    return;
                 }
                 count[0] = count[0] +1;
 
