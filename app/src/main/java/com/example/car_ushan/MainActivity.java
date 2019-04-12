@@ -2,6 +2,7 @@ package com.example.car_ushan;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -58,10 +59,25 @@ public class MainActivity extends AppCompatActivity {
                 String make, year, color, price, engine;
 
                 make= etMake.getText().toString();
+                if(TextUtils.isEmpty(make)){
+                    etMake.setError("Please Enter a Manufacturer.");
+                }
                 year= etYear.getText().toString();
+                if(TextUtils.isEmpty(year)){
+                    etMake.setError("Please Enter a Year.");
+                }
                 color= etColor.getText().toString();
+                if(TextUtils.isEmpty(color)){
+                    etMake.setError("Please Enter a Color.");
+                }
                 price= etPrice.getText().toString();
+                if(TextUtils.isEmpty(price)){
+                    etMake.setError("Please Enter a Price.");
+                }
                 engine= etEngine.getText().toString();
+                if(TextUtils.isEmpty(engine)){
+                    etMake.setError("Please Enter a Engine Litre.");
+                }
                 count[0] = count[0] +1;
 
                 CreateCar createCar = new CreateCar(make,year,color,price,engine, count[0]);
