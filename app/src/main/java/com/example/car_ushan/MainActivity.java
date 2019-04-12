@@ -9,52 +9,44 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText etMake, etYear, etColor, etPrice, etEngine;
-    TextView etAnswer;
+    EditText etMake, etYear, etColor, etPrice, etEngine,etAnswer;
     Button btnCar, btnDiesel;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         etMake= findViewById(R.id.etMake);
         etYear= findViewById(R.id.etYear);
         etColor= findViewById(R.id.etColor);
         etPrice= findViewById(R.id.etPrice);
         etEngine= findViewById(R.id.etEngine);
         etAnswer= findViewById(R.id.etAnswer);
-
         btnCar= findViewById(R.id.btnCar);
         btnDiesel= findViewById(R.id.btnDiesel);
 
-        final int[] count = new int[1];
+        final String make, year, color, price, engine;
+        make= etMake.getText().toString();
+        year= etYear.getText().toString();
+        color= etColor.getText().toString();
+        price= etPrice.getText().toString();
+        engine= etEngine.getText().toString();
+
         btnCar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              count[0] = count[0] +1;
 
-                etAnswer.setText(etAnswer.getText()+"The is Vehicle No. "+count[0]+"");
-                etAnswer.setText(etAnswer.getText()+" Manufacturer: " +etMake.getText()+" Current Value: "+etPrice.getText()+ " Effective engine Size: "+etEngine.getText());
-                etMake.setText(null);
-                etYear.setText(null);
-                etColor.setText(null);
-                etPrice.setText(null);
-                etEngine.setText(null);
+            CreateCar createCar= new CreateCar(make, year, price, color, engine);
+            etAnswer.setText(createCar.Create());
+
             }
         });
         btnDiesel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                count[0] = count[0] +1;
+                CreateCar createCar= new CreateCar(make, year, price, color, engine);
+                etAnswer.setText(createCar.Create());
 
-                etAnswer.setText(etAnswer.getText()+"The is Vehicle No. "+count[0]+"");
-                etAnswer.setText(etAnswer.getText()+" Manufacturer: " +etMake.getText()+" Current Value: "+etPrice.getText()+ " Effective engine Size: "+etEngine.getText());
-                etMake.setText(null);
-                etYear.setText(null);
-                etColor.setText(null);
-                etPrice.setText(null);
-                etEngine.setText(null);
+
             }
         });
 
